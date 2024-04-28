@@ -1,12 +1,20 @@
 {
   "name": "commerce-strapi",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "description": "A Strapi application",
+  "homepage": "https://omarmode.github.io/my-app-strapi",
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
     "build": "strapi build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "develop": "strapi develop",
+    "pp": "NODE_ENV=production strapi start",
+    "start": "strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
@@ -22,15 +30,11 @@
     "react-router-dom": "5.3.4",
     "styled-components": "5.3.3"
   },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "46bcaa89-1fe9-45c7-b8a9-68c5678d4c43"
-  },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "strapi": {
+    "uuid": "46bcaa89-1fe9-45c7-b8a9-68c5678d4c43"
+  }
 }
